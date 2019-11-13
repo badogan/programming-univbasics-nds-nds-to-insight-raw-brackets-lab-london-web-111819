@@ -52,4 +52,4 @@ def pretty_print_nds(nds)
 end
 
 #pretty_print_nds(directors_database)
-directors_totals(directors_database)
+p directors_totals(directors_database)
