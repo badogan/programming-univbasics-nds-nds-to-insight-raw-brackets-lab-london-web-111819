@@ -12,19 +12,23 @@ def directors_totals(nds)
   # ...
   # Be sure to return the result at the end!
   #nil
+  #get the full db
   vm = directors_database
+  # reset indicies to 0, 
+  # prep the result hash to be returned/updated
+  # rest gross_for_current_director to 0. It will be recycled after processing a director
   result={} ; inner_index = 0 ; outer_index = 0 ; gross_for_current_director = 0 
   
   while outer_index < vm.length do
     current_director = vm[outer_index][:name]
     while inner_index < vm[outer_index][:movies].length do
       gross_for_current_director += vm[outer_index][:movies][inner_index][:worldwide_gross]
-      inner_index += 1 
+      inner_index += 1 #move on to the next movie
     end
     result[current_director]=gross_for_current_director
-    inner_index = 0 
-    gross_for_current_director = 0 
-    outer_index += 1 
+    #reset inner_index and gross_for_current_director to 0
+    inner_index = 0 ; gross_for_current_director = 0 
+    outer_index += 1 #move on to the next director
   end
 
   return result
