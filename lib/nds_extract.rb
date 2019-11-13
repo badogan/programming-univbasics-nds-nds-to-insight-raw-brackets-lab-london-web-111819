@@ -18,13 +18,13 @@ def directors_totals(nds)
   while outer < vm.length do
     current_dir = vm[outer][:name]
     while inner < vm[outer][:movies].length do
-      result_for_current_dir = result_for_current_dir + vm[outer][:movies][inner][:worldwide_gross]
-      inner = inner + 1 
+      result_for_current_dir += vm[outer][:movies][inner][:worldwide_gross]
+      inner += 1 
     end
     result[current_dir]=result_for_current_dir
     inner = 0 
     result_for_current_dir = 0 
-    outer = outer + 1 
+    outer += 1 
   end
 
   return result
