@@ -12,38 +12,21 @@ def directors_totals(nds)
   # ...
   # Be sure to return the result at the end!
   #nil
-  
   vm = directors_database
-  result={}
-  inner = 0 
-  outer = 0 
-  result_for_current_dir = 0 
-  
-  #i = 0 
-  #while i < vm[0][:movies].length do
-  #  puts vm[0][:movies][i][:title].to_s
-  #  i=i+1 
-  #end
+  result={} ; inner = 0 ; outer = 0 ; result_for_current_dir = 0 
   
   while outer < vm.length do
     current_dir = vm[outer][:name]
-    #puts current_dir
     while inner < vm[outer][:movies].length do
-      #puts vm[outer][inner][:movies]
       result_for_current_dir = result_for_current_dir + vm[outer][:movies][inner][:worldwide_gross]
       inner = inner + 1 
     end
-    puts current_dir + result_for_current_dir.to_s
-    #result.merge({:current_dir=>result_for_current_dir})
     result[current_dir]=result_for_current_dir
-    #p result
-    #puts result
     inner = 0 
     result_for_current_dir = 0 
     outer = outer + 1 
   end
-  
-  #p result
+
   return result
 end
 
