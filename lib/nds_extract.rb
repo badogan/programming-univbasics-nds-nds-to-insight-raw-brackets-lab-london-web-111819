@@ -16,12 +16,12 @@ def directors_totals(nds)
   result={} ; inner_index = 0 ; outer_index = 0 ; gross_for_current_director = 0 
   
   while outer < vm.length do
-    current_dir = vm[outer_index][:name]
-    while inner < vm[outer_index][:movies].length do
-      gross_for_current_director += vm[outer_index][:movies][inner][:worldwide_gross]
-      inner += 1 
+    current_director = vm[outer_index][:name]
+    while inner_index < vm[outer_index][:movies].length do
+      gross_for_current_director += vm[outer_index][:movies][inner_index][:worldwide_gross]
+      inner_index += 1 
     end
-    result[current_dir]=gross_for_current_director
+    result[current_director]=gross_for_current_director
     inner = 0 
     gross_for_current_director = 0 
     outer_index += 1 
