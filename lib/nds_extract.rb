@@ -12,8 +12,9 @@ def directors_totals(nds)
   # ...
   # Be sure to return the result at the end!
   #nil
-  result={}
+  
   vm = directors_database
+  result={}
   inner = 0 
   outer = 0 
   result_for_current_dir = 0 
